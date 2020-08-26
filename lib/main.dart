@@ -41,11 +41,16 @@ class _QuizPageState extends State<QuizPage> {
       }
       quizBrain.next();
       if ((quizBrain.getQuestionsLength() - 1) == (scoreKeeper.length - 1)) {
+        int length = scoreKeeper.length;
+
         Alert(
                 context: context,
                 title: "Quiz Ended",
-                desc: "Your Score is $score")
+                desc: "Your Score is $score out of $length")
             .show();
+        scoreKeeper = [];
+        score = 0;
+        quizBrain.reset();
       }
     });
   }

@@ -31,6 +31,10 @@ class QuizBrain {
         true),
   ];
 
+  void reset() {
+    _currentQuestion = 0;
+  }
+
   void next() {
     if (_currentQuestion < _questions.length - 1) {
       _currentQuestion++;
